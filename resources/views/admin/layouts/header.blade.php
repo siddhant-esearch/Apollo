@@ -103,7 +103,14 @@
                 </li>           
            </ul>
            </li>
-
+           <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fas fa-list-alt"></i><span class="side-menu__label">Tyer Management</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+               <li>
+                  <a href="{{ url('/list-tyers') }}" class="slide-item">List Tyers</a>
+                </li>           
+           </ul>
+           </li>
              <li class="slide">
             <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fas fa-question-circle"></i><span class="side-menu__label">Query Management</span><i class="angle fa fa-angle-right"></i></a>
             <ul class="slide-menu">

@@ -22,7 +22,7 @@ Route::get('/services', 'FrontendManagementController@servicesview');
 Route::get('/service-details/{id}','FrontendManagementController@servicedetailsview');
 Route::get('/product', 'FrontendManagementController@productview');
 Route::get('/product-details/{id}','FrontendManagementController@productdetailsview');
-
+Route::get('/know-your-tyre', 'FrontendManagementController@knowyourtyre');
 //query form
 Route::post('/submit-enquriy-form','CustomerQueryManagementController@submitenquriyform');
 Route::post('/submit-product-query-form','CustomerQueryManagementController@submitproductqueryform');
@@ -43,6 +43,14 @@ Route::get('/home', function () {
 
  //admin section
  Route::group(['middleware' => ['auth', 'user_type']], function () {
+
+
+//profile section admin
+ Route::get('/profile', 'AdminController@profile');
+ Route::post('/update-profile', 'AdminController@update_profile');
+ Route::post('/update-profile-password', 'AdminController@update_profile_password');
+  Route::post('/update-profile-pic', 'AdminController@update_profile_pic');
+
 
 //slider
  Route::get('/slider', 'ContentManagementController@sliderview')->name('slider');
@@ -200,5 +208,12 @@ Route::get('/product-page-queries','CustomerQueryManagementController@productpag
 Route::get('/customer-enquiries','CustomerQueryManagementController@customerenquiries');
 
 //close query
+
+//know tyer
+Route::get('/list-tyers', 'KnowTyerManagementController@listtyers')->name('list-tyers');
+Route::post('/update-know-banner', 'KnowTyerManagementController@updateknowbanner');
+
+
+//know tyer close
 
  });

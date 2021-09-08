@@ -95,4 +95,11 @@ class FrontendManagementController extends Controller
         $productname = Product::where('details_id',$id)->first();
         return view('/frontend/product-details',compact(['productdetails','productname']));
     }
+
+    public function knowyourtyre()
+    {
+    $aboutdata = AboutContent::where('id',1)->first();
+    return view('/frontend/know-your-tyre',compact(['aboutdata']));
+
+    }
 }
